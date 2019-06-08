@@ -1,0 +1,3 @@
+# For adding multiple users in a group in one line through commands 
+   
+     gpasswd -M user1,user2,userN group_name   #Can add more users seprating by comma
