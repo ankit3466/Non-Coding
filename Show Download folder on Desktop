@@ -1,0 +1,12 @@
+########################################################################################################################################
+# By default folders on Desktop are shown on monitor screen. We can change it in linux system.
+
+---> Go home folder and make hidden folder visible by clicking on view. or you can type on terminal "ls -a" to show hidden folder.
+---> Go in .config Directory.
+---> Now open "user-dirs.dirs" using editor.
+---> Change the entry associated with "XDG_DESKTOP_DIR" to the folder you want to be shown as your desktop.
+     In our case change "$HOME/Desktop" to "$HOME/Downloads"
+     
+ ---> Save and close the file.
+ ---> Now reboot after it you are able to see the content of Downloads folder on your monitor screen.
+ ########################################################################################################################################
