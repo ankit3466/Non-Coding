@@ -1,4 +1,5 @@
 # to show history with date and time format
+
 HISTTIMEFORMAT="%d/%m/%y %T"
 
 history
