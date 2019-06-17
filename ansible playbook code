@@ -1,0 +1,26 @@
+###########################
+---
+ - hosts: localhost
+   task: 
+    - command: date
+    - shell: cal | wc -l
+    - yum: name=https state=present
+    
+############################ on another machine
+---
+ - hosts: a
+   remote_user: ec2-user
+   task: 
+    - command: date
+    - shell: cal | wc -l
+    - yum: name=https state=presen
+    
+############################# Good and professional way
+---
+ - hosts: localhost
+   tasks:
+    - name: installing httpd
+      yum: name=httpd state=present
+    - name: date command
+      command: date
+      
