@@ -1,6 +1,6 @@
 # to show history with date and time format
 
-HISTTIMEFORMAT="%d/%m/%y %T"
+HISTTIMEFORMAT="%d/%m/%y %T"   ##it is a env varible
 
 history
 #it shows history with date and time of each command execution
