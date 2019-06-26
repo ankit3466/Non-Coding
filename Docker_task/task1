@@ -1,0 +1,15 @@
+#make a directory where docker image info is stored
+  mkdir /myphp
+  cd /myphp
+
+#make a basic php webpage
+  echo -e "<html> \n <head> \n <title>PHP Test</title> \n</head> \n<body> \n<?php echo '<p>Hello World</p>'; ?> \n</body> \n</html>" >phptest.php
+
+#making a Dockerfile which have image info
+  echo -e  " FROM fedora \n# this is base image where we want some changes \n# FROM check images in local system if not present then pull from MAINTAINER ankitgupta3466@gmail.com \n#info about image creator \nRUN yum install httpd -y \n#installing php and its modules \nRUN  dnf -y install php  php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json \n# launch a container and do the changes \nCOPY phptest.php /var/www/html \n# source base os --> container(destination) \nEXPOSE 80 \n# we want to use http protocol inside container \nENTRYPOINT httpd -DFOREGROUND \n# by default process of container \n# alternative way of httpd service" > Dockerfile
+
+#building the docker image
+  docker build -t "test" /myphp
+
+#running the image having container name php
+  docker run -itd --name php -p 1234:80 test
